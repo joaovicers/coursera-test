@@ -1,5 +1,6 @@
-
-
+body{
+	margin-top: 150px;
+}
 
 
 /*** HEADER ***/
@@ -8,7 +9,7 @@
 	background-color: #CCCCCC;
 	border-radius: 0;
 	border: 1px solid black;
-	position: relative;
+	margin-bottom: 20px;
 }
 
 
@@ -45,8 +46,6 @@
 	text-decoration: none;
 	color: black;
 	text-align: center;
-	margin-top: 5px;
-	margin-bottom: 5px;
 }
 
 #nav-list1 a:hover{
@@ -68,7 +67,7 @@
 }
 
 #large-text {
-	background-color: #CCCCCC;
+	background-color: #CCCCAA;
 	padding: 10px;
 	margin-bottom: 20px;
 }
@@ -78,4 +77,5 @@
 	font-weight: bold;
 	text-shadow: 1px 1px 1px #DDDDFF;
 	margin-bottom: 10px;
+
 }

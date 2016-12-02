@@ -104,49 +104,63 @@
 
 
 <!-- Zoomable image by openSeadragon1 -->
-	<div class="col-md-12 col-sm-12 col-xs-12">
-
-		<div id = "mapaInterno">
-			<div id="openseadragon1" style="width: 100%; height: 400px;"></div>
+	<div id= "mpInt"  class="col-md-12 col-sm-12 col-xs-12">
+		<div id= "mapaInterno">	
+      <div id="openseadragon1" style="width: 100%; height: 300px;"></div>
 			<script src="/openseadragon/openseadragon.min.js"></script>
 			<script type="text/javascript">
 			    var viewer = OpenSeadragon({
 			        id: "openseadragon1",
 			        prefixUrl: "/openseadragon/images/",
-			        tileSources: "/images/1andar_reitoria.dzi",
-			        minZoomLevel: 1,
+              sequenceMode: true,
+              tileSources: [
+                "/images/1andar_reitoria.dzi",
+                "/images/2andar_reitoria.dzi",
+                "/images/3andar_reitoria.dzi"
+              ],
+              minZoomLevel: 1,
 			        defaultZoomLevel: 2.5,
-			       
-			   
+           
 			    });
-			 	
 			 	
 			    viewer.addHandler('open', function(){
 
-					start_point = new OpenSeadragon.Rect(0.06,-0.0,0.58,0.33);
-					viewer.viewport.fitBounds(start_point, true);
-			 	
-			    })
-			 	
-			
+  					var start_point = new OpenSeadragon.Rect(0,0.12,0.4,0.18);
+
+            switch(viewer.currentPage()){
+              case 0:
+                viewer.viewport.fitBounds(start_point, true);
+                break;
+              case 1: 
+                start_point = new OpenSeadragon.Rect(0.19,0.08,0.4,0.28); //sry :(
+                viewer.viewport.fitBounds(start_point, true);
+                break;
+              case 2: start_point = new OpenSeadragon.Rect(0.12,0.06,0.4,0.23); //sry :(
+                viewer.viewport.fitBounds(start_point, true);
+                break;
+            }
+
+            //console.log(viewer.currentPage());
+			 	    var andar = document.getElementById("andar_mapa");
+            andar.innerHTML = "Mapa Interno - "+ (viewer.currentPage()+1)+ " andar";
+			    });
+
+
 
 			</script>
-		
-		</div>
-
+       <span id="andar_mapa">Mapa Interno - 1 Andar</span>
+    </div>
 	</div>
 
 
-
-
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <!-- <a href="https://goo.gl/maps/ixvS9JyQYQx" target="_blank"> -->
-          <div id="map-tile">
-          	<div id="mapid"></div>
-            <span>Mapa</span>
-          </div>
-        <!-- </a>-->
-      </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <!-- <a href="https://goo.gl/maps/ixvS9JyQYQx" target="_blank"> -->
+        <div id="map-tile">
+        	<div id="mapid"></div>
+          <span>Mapa</span>
+        </div>
+      <!-- </a>-->
+    </div>
   
 
 
@@ -161,26 +175,6 @@
 </div> <!--fim do conteudo principal -->
 
   <footer class="panel-footer">
-    <div class="container">
-      <div class="row">
-        <section id="hours" class="col-sm-4">
-          <span>Horário de Funcionamento:</span><br>
-          De segunda a sexta-feira, das 8h às 12h e das 14h às 18h.
-          <hr class="visible-xs">
-        </section>
-        <section id="address" class="col-sm-4">
-          <span>Endereço</span><br>
-          SGAN Quadra 610, módulos D, E, F e G<br>
-          Brasília/DF - CEP: 70.860-100
-          <hr class="visible-xs">
-        </section>
-        <section id="testimonials" class="col-sm-4">
-          <p>"Ótimo Campus e com excelente estrutura."</p>
-          <p>"Muito bom o espaço e com muitos cursos técnicos de qualidade"</p>
-        </section>
-      </div>
-      <div class="text-center">Instituto Federal de Brasília - Núcleo de Técnologia da Informação e Comunicação (NTIC)</div>
-    </div>
   </footer>
 
 

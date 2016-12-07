@@ -255,6 +255,9 @@ width: 150px;
 
 }
 
+#text-tile img{
+  width: 10.0em;
+}
 
 
 
@@ -453,10 +456,12 @@ width: 150px;
   font-size: 0.8em;
 }
 
+
+/*
 #text-tile img{
   width: 90%;
 }
-
+*/
 
 
 

@@ -176,7 +176,7 @@ width: 150px;
 }
 
 #img-tile {
-  height: 150px;
+  height: 170px;
   width: 100%;
   margin-bottom: 15px;
   padding: 0;
@@ -242,7 +242,7 @@ width: 150px;
 
 
 #text-tile {
-  height: 150px;
+  height: 170px;
   width: 100%;
   margin-bottom: 15px;
   padding: 0;
@@ -444,9 +444,19 @@ width: 150px;
 }
 
 #img-tile span {
-  font-size: 0.55em;
+  font-size: 0.50em;
+  padding: 1px;
 
 }
+
+#text-tile p{
+  font-size: 0.8em;
+}
+
+#text-tile img{
+  width: 90%;
+}
+
 
 
 
